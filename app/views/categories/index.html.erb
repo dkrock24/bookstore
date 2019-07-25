@@ -1,0 +1,23 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%  @cont=0 %>
+  	<% @Category.each do |c| %>
+    <tr>
+      <th scope="row"><%=  @cont+=1 %></th>
+      <td><%= c.name %></td>
+      <td><%= link_to "Edit" , edit_category_path(c) , :class => "btn btn-info" %></td>
+      <td><%= link_to "Delete" , c ,method: :delete, data:{confirm:'Are you sure'} , :class => "btn btn-warning" %></td>
+    </tr>
+    <% end %>
+    
+  </tbody>
+</table>

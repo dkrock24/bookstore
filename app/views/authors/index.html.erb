@@ -1,0 +1,23 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%  @cont=0 %>
+  	<% @Author.each do |a| %>
+    <tr>
+      <th scope="row"><%=  @cont+=1 %></th>
+      <td><%= a.first_name%> <%=a.last_name%></td>
+      <td><%= link_to "Edit" , edit_author_path(a) , :class => "btn btn-info" %></td>
+      <td><%= link_to "Delete" , a , method: :delete, data:{confirm:'Are you sure'} , :class => "btn btn-warning" %></td>
+    </tr>
+    <% end %>
+    
+  </tbody>
+</table>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookstore</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+     <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a href="#"><%= link_to 'Bookstore', books_index_path, :class=> 'navbar-brand' %></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 mb-12">
+                  <%= render 'partials/sidebar' %>       
+                </div>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content --><br><br><br>
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-3"><br>
+          
+            <div class="list-group">
+                <a href="#" class="active list-group-item"><h1 class="my-4">Book Store</h1></a>
+                <a href="#"><%= link_to "Books", books_index_path ,           :class=> 'list-group-item' %></a>
+                <a href="#"><%= link_to "Categories", categories_index_path , :class=> 'list-group-item' %></a>
+                <a href="#"><%= link_to "Author", authors_index_path ,         :class=> 'list-group-item' %></a>
+                <a href="#"><%= link_to "Publishers", publishers_index_path , :class=> 'list-group-item' %></a>
+                <a href="#"><%= link_to "About", about_index_path ,           :class=> 'list-group-item' %></a>
+            </div><br>
+
+            <div class="list-group">
+                <a href="#" class="active list-group-item">Categories</a>
+                <% @Category.each do |c| %>
+                    <a href="#"><%= link_to c.name, c , :class=> 'list-group-item' %></a>
+                <% end %>
+            </div>
+        </div>
+
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+            <%= render 'partials/slide' %>
+            <%= yield %>         
+        </div>
+        <!-- /.col-lg-9 -->
+        
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+
+
+
+  </body>
+
+  <style type="text/css">
+  .colorTexto{
+    color: white;
+  }
+  .imagen_altura{
+    height: 130px;
+  }
+</style>
+
+</html>

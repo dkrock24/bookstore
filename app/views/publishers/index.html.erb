@@ -1,0 +1,22 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%  @cont=0 %>
+  	<% @publisher.each do |p| %>
+    <th scope="row"><%=  @cont+=1 %></th>
+      <td><%= p.name %></td>
+      <td><%= link_to "Edit" , edit_publisher_path(p) , :class => "btn btn-info" %></td>
+      <td><%= link_to "Delete" , p ,method: :delete , data:{confirm:'Are You Sure'}, :class => "btn btn-warning" %></td>
+    </tr>
+    <% end %>
+    
+  </tbody>
+</table>

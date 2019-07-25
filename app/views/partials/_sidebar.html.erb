@@ -1,0 +1,18 @@
+<% if params[:controller] == 'books' %>
+	<%= link_to 'New Book', books_new_path , :class =>'colorTexto btn btn-primary'%>
+<% end %>
+
+<% if params[:controller] == 'categories' %>
+	<%= link_to 'New Category', categories_new_path , :class =>'colorTexto btn btn-primary'%>
+<% end %>
+
+<% if params[:controller] == 'authors' %>
+	<%= link_to 'New Author', authors_new_path , :class =>'colorTexto btn btn-primary'%>
+<% end %>
+
+<% if params[:controller] == 'publishers' %>
+	<%= link_to 'New Publisher', publishers_new_path , :class =>'colorTexto btn btn-primary'%>
+<% end %>
+
+
+
